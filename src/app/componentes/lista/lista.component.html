@@ -1,0 +1,10 @@
+<div>
+    Reservas
+</div>
+<div *ngFor="let l of lista">
+    <div>Nombre:{{l.nombre}} </div>
+    <div>Ubicacion:{{l.ubicacion}} </div>
+    <button type="button" (click)="Reservar(l.nombre)">Reservar</button>
+</div>
+
+
