@@ -14,7 +14,7 @@ import { MiUsuarioService } from './servicios/mi-usuario.service';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PerfilUsuarioComponent } from './componentes/perfil-usuario/perfil-usuario.component';
-import { CrearProductoComponent } from './componentes/crear-producto/crear-producto.component';
+import { CrearReservaComponent } from './componentes/crear-reserva/crear-reserva.component';
 import { WebSocketService } from './servicios/web-socket.service';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { WebSocketService } from './servicios/web-socket.service';
     ActualizarUsuarioComponent,
     NavbarComponent,
     PerfilUsuarioComponent,
-    CrearProductoComponent
+    CrearReservaComponent
   ],
   imports: [
     BrowserModule,

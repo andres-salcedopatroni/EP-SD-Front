@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MiUsuarioService } from 'src/app/servicios/mi-usuario.service';
-import { PatrocinioService } from 'src/app/servicios/patrocinio.service';
+import { ReservaService } from 'src/app/servicios/reserva.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class PerfilUsuarioComponent {
   tipo:any;
   estado:boolean=MiUsuarioService.estadoUsuario();
 
-  constructor(private route: ActivatedRoute, private servicioUsuario: UsuarioService, private servicioPatrocinio:PatrocinioService) { }
+  constructor(private route: ActivatedRoute, private servicioUsuario: UsuarioService, private servicioReserva:ReservaService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -32,7 +32,7 @@ export class PerfilUsuarioComponent {
   }
 
   patrocinar(): void{
-    this.servicioPatrocinio.crearPatrocinio({"codigoPatrocinador":MiUsuarioService.obtenerUsuario(),"codigoPatrocinado":this.dni_ruc,"cantidadInvertida":100}).subscribe(
+    this.servicioReserva.crearReserva({"codigoUsuario":MiUsuarioService.obtenerUsuario(),"nombreRestaurante":this.dni_ruc,"fecha":100}).subscribe(
       (datos)=>{
         console.log(datos);
       },
